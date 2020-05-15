@@ -1,0 +1,22 @@
+{
+  "name": "resize-to-webp",
+  "version": "1.0.0",
+  "description": "resizes photos and converts to webp foramt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterRwaBBC/resize-to-webp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeterRwaBBC/resize-to-webp/issues"
+  },
+  "homepage": "https://github.com/PeterRwaBBC/resize-to-webp#readme",
+  "dependencies": {
+    "sharp": "^0.25.2"
+  }
+}
