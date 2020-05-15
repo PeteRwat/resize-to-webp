@@ -8,7 +8,7 @@ if(process.argv.length !== 4){
 }
 
 const date = new Date
-const dayMonth = `${date.getDate()}-${date.getMonth()}`
+const dayMonth = `${date.getDate()}-${date.getMonth() + 1}`
 const outputDir = path.join(process.argv[3], dayMonth)
 if (!fs.existsSync(outputDir)){
     fs.mkdirSync(outputDir);
