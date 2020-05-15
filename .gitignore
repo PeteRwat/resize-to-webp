@@ -2,8 +2,10 @@ node_modules/*
 
 testPhotos/*
 
-orginalPhotos/*
+originalPhotos/*
+originalPhotos/*/*
 
 processedPhotos/*
+processedPhotos/*/*
 
 package-lock.json
