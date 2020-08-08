@@ -2,8 +2,8 @@ const sharp = require ('sharp')
 const fs = require('fs') 
 const path = require('path')
 
-if(process.argv.length !== 4){
-    console.log(`Usage : 'node index.js 'path to PushSubscriptionOptions' 'path to output folder'`)
+if(process.argv.length !== 5){
+    console.log(`Usage : 'node index.js 'path to original folder' 'path to output folder' 'scale factor'`)
     process.exit(0)
 }
 
@@ -19,8 +19,13 @@ const processPhotos = async (originalPhotos) => {
         const originalPath = path.join(process.argv[2], photo)
         const outputPath = path.join(outputDir, photo.replace('jpg', 'webp'))
 
-        await sharp(originalPath)
+        const image = sharp(originalPath)
+        const width = image.metadata().then(async (metadata) => {
+            console.log(metadata.width)
+            await sharp(originalPath)
+            .resize({ width: Math.round(metadata.width/process.argv[4]) })
             .toFile(outputPath)
+        })
     })
 }
 
